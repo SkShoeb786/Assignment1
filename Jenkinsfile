@@ -13,7 +13,7 @@ pipeline{
 		}
 		stage('sync s3'){
 			steps{
-				sh 'aws s3 rm s3://sk.bucket/*'
+				sh 'aws s3 rm s3://sk.bucket'
 				sh 'aws s3 sync /mnt/projects/* s3://sk.bucket/'
 			}
 		}
