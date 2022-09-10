@@ -13,7 +13,8 @@ pipeline{
 		}
 		stage('sync s3'){
 			steps{
-				sh 'aws s3 sync /mnt/projects/* s3://sk.bucket/'
+				sh 'aws s3 rm s3://sk.bucket/assignment1/22q3/*'
+				sh 'aws s3 cp /mnt/projects/assignment1/22q3 s3://sk.bucket/assignment1/22q3 --recursive'
 			}
 		}
 		stage('get index.html'){
