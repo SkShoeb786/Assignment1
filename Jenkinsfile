@@ -13,7 +13,7 @@ pipeline{
 		}
 		stage('sync s3'){
 			steps{
-				sh 'aws s3 sync /mnt/projects/assignment1/* s3://sk.bucket/'
+				sh 'aws s3 sync /mnt/projects/* s3://sk.bucket/'
 			}
 		}
 		stage('get index.html'){
