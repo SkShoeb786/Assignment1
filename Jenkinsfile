@@ -14,7 +14,7 @@ pipeline{
 		stage('sync s3'){
 			steps{
 				sh 'aws s3 rm s3://sk.bucket/assignment1/22q1/*'
-				sh 'aws s3 cp /mnt/projects/assignment1/22q1/* s3://sk.bucket/assignment1/22q1/'
+				sh 'aws s3 cp /mnt/projects/assignment1/22q1/* s3://sk.bucket/assignment1/22q1/*'
 			}
 		}
 		stage('get index.html'){
